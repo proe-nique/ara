@@ -1,0 +1,20 @@
+{% load static %}
+
+<section class="wrapper" id="team">
+	<h1>our team</h1>
+	<div class="team">
+		
+		{% for member in members %}
+		<div class="team-member">
+			<div class="team-image">
+				<img src="{{ member.avatar.url }}" alt="team-image">
+			</div>
+			<h3>{{ member.user.username|title }}</h3>
+			<p class="role">{{ member.role|title }}</p>
+			<p><span>Call</span> +{{ member.mobile }}</p>
+			<p><span>whatsapp</span> +{{ member.whatsapp }}</p>
+
+		</div>
+		{% endfor %}
+	</div>
+</section>
