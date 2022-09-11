@@ -1,0 +1,32 @@
+{% load static %}
+
+<section class="t-container" id="testimonials">
+	<h1>testimonials</h1>
+	<div class="carousel">
+		<input type="radio" name="slide" id="indicator1">
+		<input type="radio" name="slide" id="indicator2">
+		<input type="radio" name="slide" id="indicator3">
+		
+
+		<div class="carousel-inner">
+			
+			{% for review in reviews %}
+			<div class="carousel-item">
+				<div class="carousel-caption">
+					<img src="{{ review.image.url }}" alt="image">
+					<h2>{{ review.name|title }} <br><span class="job-title">{{ review.job_description.title }}</span></h2>
+					<p>{{ review.review|capfirst }}</p>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+		<div class="indicators">
+			<label for="indicator1"></label>
+			<label for="indicator2"></label>
+			<label for="indicator3"></label>
+		</div>
+	</div>
+	<div class="review">
+		<a href="{% url 'home:review' %}">Review Us</a>
+	</div>
+</section>

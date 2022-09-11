@@ -1,0 +1,45 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+
+{% block content %}
+{% include 'partials/banner.html' %}
+<main class="container" id="services">
+	<h1>our services</h1>
+	<div class="row">
+		
+		{% for service in services %}
+		<div class="service">
+	
+			{% if service.name == 'Mileage Statistics' %}
+			<i class="fa-solid fa-road-circle-check"></i>	
+			{% elif service.name == 'Vehicle Location' %}
+			<i class="fa-solid fa-map-location-dot"></i>
+			{% elif service.name == 'Vibration Alarm' %}
+			<i class="fa-solid fa-car-on"></i>
+			{% elif service.name == 'Acc Status' %}
+			<i class="fa-solid fa-gauge-high"></i>
+			{% elif service.name == 'Remote Control' %}
+			<i class="fa-solid fa-satellite"></i>	
+			{% else %}
+			
+			{% endif %}
+				
+				
+			<h2>{{ service.name|title }}</h2>
+			<p>{{ service.about|capfirst }}.</p>
+		</div>
+		{% endfor %}
+
+	</div>
+</main>
+
+{% include 'partials/testimonials.html' %}
+{% include 'partials/team.html' %}
+{% include 'partials/about.html' %}
+{% include 'partials/contact.html' %}
+
+
+{% endblock content %}
+    

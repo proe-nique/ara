@@ -1,0 +1,26 @@
+{% load static %}   
+
+<section class="section" id="about">
+	<div class="about-container">
+		<div class="content-section">
+			<div class="title">
+				<h1>About Us</h1>
+			</div>
+			<div class="about-content">
+				<h3>Thank you for taking your time to review our company</h3>
+				<p>{{ site_bio|capfirst }}</p>
+				<div class="button">
+					<a href="#contact">Contact Us</a>
+				</div>
+			</div>
+			<div class="social">
+				<a href="https://www.facebook.com/107274258794499/posts/1156982825232001/?substory_index=1156982825232001&app=fbl"><i class="fab fa-facebook-f"></i></a>
+				<a href=""><i class="fab fa-twitter"></i></a>
+				<a href=""><i class="fab fa-instagram"></i></a>
+			</div>
+		</div>
+		<div class="image-section">
+			<img src="{% static 'css/img/about.jpg' %}" alt="image">
+		</div>
+	</div>
+</section>
